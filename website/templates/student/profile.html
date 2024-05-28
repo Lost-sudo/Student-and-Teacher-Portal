@@ -1,0 +1,42 @@
+{% extends "student/base-2.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<style>
+    /* Custom CSS for styling */
+    .container {
+        margin-top: 50px;
+    }
+    h2 {
+        color: #007bff;
+        margin-bottom: 30px;
+    }
+    .profile-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .profile-info p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .profile-info strong {
+        color: #343a40;
+    }
+</style>
+
+<div class="container">
+    <!-- Profile Information -->
+    <h2>Profile</h2>
+    <div class="profile-info">
+        <!-- Display student's profile details -->
+        <p><strong>First Name:</strong> {{ student_info.firstname }}</p>
+        <p><strong>Last Name:</strong> {{ student_info.lastname }}</p>
+        <p><strong>Course:</strong> {{ student_info.course }}</p>
+        <p><strong>Birthday:</strong> {{ student_info.birthday }}</p>
+        <p><strong>Gender:</strong> {{ student_info.gender }}</p>
+    </div>
+</div>
+
+{% endblock %}

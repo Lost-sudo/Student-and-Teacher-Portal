@@ -1,0 +1,10 @@
+/* Custom CSS for hover effect */
+.nav-pills .nav-link:hover {
+    background-color: #343a40; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+.dropdown-item:hover {
+    background-color: #343a40;
+    color: #fff;
+}

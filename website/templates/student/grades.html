@@ -1,0 +1,37 @@
+{% extends "student/base-2.html" %}
+{% block title %} Grades {% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <!-- Title -->
+    <h1 class="mb-4 text-center">Student Grades</h1>
+    <!-- Card to contain the table -->
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <!-- Table to display grades -->
+            <table class="table table-striped table-hover">
+                <!-- Table header -->
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <!-- Table body -->
+                <tbody>
+                    <!-- Loop through grades and display each one -->
+                    {% for grade in grades %}
+                    <tr>
+                        <!-- Display subject name -->
+                        <td>{{ grade.subject_name }}</td>
+                        <!-- Display grade -->
+                        <td>{{ grade.grade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

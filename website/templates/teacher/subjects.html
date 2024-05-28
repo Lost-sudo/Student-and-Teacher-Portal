@@ -1,0 +1,25 @@
+{% extends "teacher/base-2.html" %}
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <h1>Manage Subjects</h1>
+
+    <!-- Subject List -->
+    <ul class="list-group">
+        {% for subject in subjects %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ subject.name }}</span>
+                <span class="badge bg-secondary">{{ subject.subject_code }}</span>
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">Edit</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Create New Subject Button -->
+    <a href="{{ url_for('views.create_subject') }}" class="btn btn-primary mt-3">Create New Subject</a>
+</div>
+
+{% endblock %}

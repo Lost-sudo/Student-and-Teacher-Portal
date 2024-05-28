@@ -1,0 +1,53 @@
+{% extends "student/base-2.html" %}
+
+{% block title %} Subjects {% endblock %}
+
+{% block content %}
+
+<style>
+    /* Custom CSS for the Subjects */
+    .container {
+        margin-top: 50px;
+    }
+    h2 {
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .list-group-item {
+        font-size: 1.1em;
+        color: #333;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <!-- Enroll in a Classroom -->
+        <div class="col-md-6">
+            <h2>Enroll in a Classroom</h2>
+            <form action="{{ url_for('views.enroll_subject') }}" method="POST">
+                <div class="mb-3">
+                    <label for="subject_code" class="form-label">Subject Code:</label>
+                    <input type="text" class="form-control" id="subject_code" name="subject_code" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enroll</button>
+            </form>
+        </div>
+        <!-- Enrolled Subjects -->
+        <div class="col-md-6">
+            <h2>Enrolled Subjects</h2>
+            <ul class="list-group">
+                {% for subject in subjects %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ subject.name }}
+                    <span class="badge bg-primary rounded-pill">Enrolled</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

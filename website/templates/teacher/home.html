@@ -1,0 +1,241 @@
+{% extends "teacher/base-2.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %}
+
+<style>
+    /* Custom CSS for the Home Page */
+    h2 {
+        color: #007bff;
+        margin-top: 50px;
+    }
+    .lead {
+        font-size: 1.2rem;
+    }
+    /* Set background color and text color for sections */
+    .section-bg {
+        background-color: #343a40;
+        color: #fff;
+    }
+    /* Adjust padding for sections */
+    .section-padding {
+        padding: 80px 0;
+    }
+    /* Customize card background and text color */
+    .card-bg {
+        background-color: #212529;
+        color: #fff;
+    }
+    /* Set border color for card */
+    .card-border {
+        border-color: #343a40;
+    }
+</style
+
+
+<!--Container for the content -->
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2>Welcome, {{ firstname }}!</h2>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+<section class="section-bg section-padding text-center text-sm-start">
+    <div class="container">
+        <div class="row d-sm-flex align-items-center justify-content-between">
+            <div class="col-md-6">
+                <h1>Welcome to <span class="text-warning">Student and Teacher Portal</span></h1>
+                <p class="lead my-4">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus dolores unde quam quisquam. Esse, corrupti.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/logo.jpg" alt="" class="img-fluid w-100">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--About-->
+<section class="section-padding" id="about">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md">
+                <div class="card card-bg card-border">
+                    <div class="card-body">
+                        <div class="h1 mg-3">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                        </div>
+                        <h3 class="card-title">Introduction</h3>
+                        <p class="card-text">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, harum. Quos voluptates voluptas similique ratione!
+                        </p>
+                        <a href="#intro" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mg-3">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                        </div>
+                        <h3 class="card-title">Features</h3>
+                        <p class="card-text">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, harum. Quos voluptates voluptas similique ratione!
+                        </p>
+                        <a href="#features" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mg-3">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                        </div>
+                        <h3 class="card-title">Teachnology Stack</h3>
+                        <p class="card-text">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, harum. Quos voluptates voluptas similique ratione!
+                        </p>
+                        <a href="#tech" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="section-bg section-padding" id="intro">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-warning mb-4">Introduction</h2>
+                <p class="lead">
+                    Welcome to the ClassBridge.
+                </p>
+                <p>
+                    At ClassBridge, we believe in simplifying the educational experience by providing a centralized platform for students and teachers to efficiently manage their academic activities. Our web application is designed to streamline communication, organization, and collaboration within the educational community, enhancing the learning experience for all users.
+                </p>
+                <p>
+                    <strong>Empowering Students and Teachers:</strong> Student and Teacher Portal offers a comprehensive suite of features tailored to meet the needs of both students and teachers. Whether you're a student striving to stay organized and informed or a teacher looking to streamline grading and communication, our portal has you covered.
+                </p>
+                <p>
+                    <strong>About Us:</strong> ClassBridge was developed by a passionate team dedicated to improving the educational experience for students and teachers alike. With a focus on user-centric design and cutting-edge technology, we strive to provide a seamless and intuitive platform that simplifies academic tasks and fosters collaboration.
+                </p>
+                <p>
+                    <strong>Get Started:</strong> Join the ClassBridge community today and experience the convenience and efficiency of our student and teacher portal. Whether you're a student eager to stay organized or a teacher looking to streamline grading, we're here to support your educational journey every step of the way.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="/img/logo.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section-padding" id="features">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 text-center">
+                <img src="/img/logo.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-warning mb-4">Features</h2>
+                <p class="lead">
+                    We provide a comprehensive suite of features tailored to meet the needs of both students and teachers. Whether you're a student striving to stay organized and informed or a teacher looking to streamline grading and communication, our portal has you covered.
+                </p>
+                <p>
+                    <strong>Key Features:</strong>
+                    <ul>
+                        <li>Personalized Schedules: View your class schedule at a glance, helping you stay organized and on track with your studies.</li>
+                        <li>Grade Management: Easily access and track your grades for assignments, exams, and overall performance.</li>
+                        <li>Effortless Communication: Communicate with teachers directly through our messaging system, facilitating quick and effective communication.</li>
+                        <li>Assignment Submission: Submit assignments online, saving time and paper while ensuring timely submission.</li>
+                        <li>Grading Tools: Teachers can efficiently manage student grades, providing timely feedback and monitoring progress throughout the semester.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Technology Stack Section -->
+ <section class="section-bg section-padding" id="tech">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <!-- <div class="col-md-6"> -->
+                <p class="lead">
+                    Curious about the technology behind our ClassBridge? Here's a closer look at our tech stack:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Backend:</strong> Python
+                        <p>
+                            Python serves as the backbone of our portal's backend. Its versatility and ease of use make it an ideal choice for handling the server-side logic, data processing, and interactions with the database.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Frontend:</strong> HTML, CSS, Bootstrap
+                        <p>
+                            Our frontend is powered by a combination of HTML, CSS, and Bootstrap. HTML provides the structure of our web pages, CSS styles them beautifully, and Bootstrap adds responsiveness and pre-designed components for a seamless user experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Database:</strong> SQL (Structured Query Language)
+                        <p>
+                            SQL is the language of our database management system. It enables us to create, read, update, and delete data in our relational database, ensuring efficient storage and retrieval of information for our users.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="/img/logo.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Developers Section -->    
+<section class="section-padding" id="developers">
+    <div class="container">
+        <h2 class="text-center text-dark">Developers</h2>
+        <p class="lead text-center text-dark mb-5">
+            Meet the brilliant minds behind ClassBridge.
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <img src="/img/developer1.jpg" class="rounded-circle mb-3" alt="John Patrick Paraon">
+                        <h3 class="card-title mb-3">John Patrick Paraon</h3>
+                            Developer
+                        </p>
+                        <a href=""><i class="bi bi-facebook text-light mx-1"></i></a>
+                        <a href=""><i class="bi bi-instagram text-light mx-1"></i></a>
+                        <a href=""><i class="bi bi-twitter text-light mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <img src="/img/developer2.jpg" class="rounded-circle mb-3" alt="Jan Joshua Cubelo">
+                        <h3 class="card-title mb-3">Jan Joshua Cubelo</h3>
+                        <p class="card-text">
+                            Co-Developer
+                        </p>
+                        <a href=""><i class="bi bi-facebook text-light mx-1"></i></a>
+                        <a href=""><i class="bi bi-instagram text-light mx-1"></i></a>
+                        <a href=""><i class="bi bi-twitter text-light mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

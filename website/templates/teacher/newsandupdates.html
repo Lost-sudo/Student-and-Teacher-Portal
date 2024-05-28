@@ -1,0 +1,54 @@
+{% extends "teacher/base-2.html" %}
+
+{% block title %} News and Updates {% endblock %}
+
+{% block content %}
+<style>
+    /* Custom CSS styles */
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        color: #007bff;
+    }
+    .card-text small {
+        color: #6c757d;
+    }
+</style>
+
+<!-- Container for the news and updates -->
+<div class="container mt-5">
+    <!-- Heading for the news and updates section -->
+    <h1 class="mb-4 text-center">News and Updates</h1>
+    <!-- Loop through each news item in the context variable 'news_updates' -->
+    {% for item in news_updates %}
+    <!-- Card to display each news and update item -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <!-- Row to display news and update details side by side -->
+            <div class="row">
+                <!-- Column for news -->
+                <div class="col-md-6">
+                    <!-- Heading for the news section -->
+                    <h5 class="card-title">News</h5>
+                    <!-- Display news details -->
+                    <p class="card-text">{{ item.news_details }}</p>
+                    <!-- Display news date -->
+                    <p class="card-text"><small class="text-muted">Date: {{ item.news_date }}</small></p>
+                </div>
+                <!-- Column for updates -->
+                <div class="col-md-6">
+                    <!-- Heading for the update section -->
+                    <h5 class="card-title">Update</h5>
+                    <!-- Display update details -->
+                    <p class="card-text">{{ item.update_details }}</p>
+                    <!-- Display update date -->
+                    <p class="card-text"><small class="text-muted">Date: {{ item.update_date }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

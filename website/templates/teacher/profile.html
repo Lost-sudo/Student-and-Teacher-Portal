@@ -1,0 +1,44 @@
+{% extends "teacher/base-2.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<style>
+    /* Custom CSS styles */
+    .container {
+        margin-top: 50px;
+    }
+    h2 {
+        color: #007bff;
+        margin-bottom: 30px;
+    }
+    .profile-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .profile-info p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    .profile-info strong {
+        color: #343a40;
+    }
+</style>
+
+<!-- Container for the profile information -->
+<div class="container">
+    <!-- Heading for the profile section -->
+    <h2>Profile</h2>
+    <!-- Profile information displayed within a styled div -->
+    <div class="profile-info">
+        <!-- Displaying various profile details using template variables -->
+        <p><strong>First Name:</strong> {{ teacher_info.firstname }}</p>
+        <p><strong>Last Name:</strong> {{ teacher_info.lastname }}</p>
+        <p><strong>Rank:</strong> {{ teacher_info.rank }}</p>
+        <p><strong>Birthday:</strong> {{ teacher_info.birthday }}</p>
+        <p><strong>Gender:</strong> {{ teacher_info.gender }}</p>
+    </div>
+</div>
+{% endblock %}

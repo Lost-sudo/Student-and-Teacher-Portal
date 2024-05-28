@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<section class="vh-100">
+    <div class="container mt-3 pb-5" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 900px;">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 col-lg-6 col-xl-8">
+                <form method="POST">
+                    <div class="d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Register</p>
+                   </div>
+                    <!-- First name and last name fields -->
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="teacher-first-name" placeholder="Enter First Name" name="teacher-first-name">
+                                <label for="first-name">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="teacher-last-name" placeholder="Last Name" name="teacher-last-name">
+                                <label for="last-name">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email field -->
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="teacher-email" placeholder="Enter a valid email address" name="teacher-email">
+                                <label for="email">Enter email address</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Password fields -->
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="tpassword1" placeholder="Enter password" name="tpassword1">
+                                <label for="password1">Enter password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="tpassword2" placeholder="Re-enter password" name="tpassword2">
+                                <label for="password2">Re-enter password</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rank and birthday fields -->
+                    <div class="row mb-2">
+                        <div class="col">
+                            <select class="form-select" id="rank" name="rank">
+                                <option selected>Teacher Rank</option>
+                                <option value="Contractual Instructor">Contractual Instructor</option>
+                                <option value="Instructor 1">Instructor 1</option>
+                                <option value="Instructor 2">Instructor 2</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="t-birthdate" placeholder="MM/DD/YY" name="t-birthdate">
+                                <label for="birthdate">Enter your birthday</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gender selection -->
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="t-gender" class="form-label">Select Gender</label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="female" name="t-gender" value="Female">
+                                <label for="female" class="form-check-label">Female</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="male" name="t-gender" value="Male">
+                                <label for="male" class="form-check-label">Male</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Register button -->
+                    <div class="text-center text-lg-start">
+                        <button type="submit" class="btn btn-dark btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                        <p class="small fw-bold mt-2 mb-0">Already registered? <a href="/login" class="link-danger">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

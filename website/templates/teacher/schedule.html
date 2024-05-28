@@ -1,0 +1,56 @@
+{% extends "teacher/base-2.html" %} 
+{% block title %} Schedule {% endblock %} 
+{% block content %}
+
+<!-- Custom CSS styles for card layout -->
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        color: #007bff;
+    }
+    .card-text small {
+        color: #6c757d;
+    }
+    .status-upcoming {
+        color: #28a745;
+        font-weight: bold;
+    }
+    .status-done {
+        color: #6c757d;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Container for displaying upcoming and past events -->
+<div class="container mt-5">
+    <!-- Heading for upcoming events -->
+    <h1 class="mb-4 text-center">Upcoming Events</h1>
+    <!-- Loop through upcoming events and display each in a card -->
+    {% for event in upcoming_events %}
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ event.event_details }}</h5>
+            <p class="card-text">Date: {{ event.event_date }}</p>
+            <p class="card-text status-upcoming">Status: Upcoming</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Heading for past events -->
+    <h1 class="mb-4 mt-5 text-center">Past Events</h1>
+    <!-- Loop through past events and display each in a card -->
+    {% for event in past_events %}
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ event.event_details }}</h5>
+            <p class="card-text">Date: {{ event.event_date }}</p>
+            <p class="card-text status-done">Status: Done</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

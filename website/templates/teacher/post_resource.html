@@ -1,0 +1,41 @@
+{% extends "teacher/base-2.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="text-center">Post Resource</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('views.post_resource') }}">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Resource URL</label>
+                            <input type="url" class="form-control" id="url" name="url" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject_id">Subject</label>
+                            <select class="form-control" id="subject_id" name="subject_id" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                {% for subject in subjects %}
+                                    <option value="{{ subject.id }}">{{ subject.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Post Resource</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

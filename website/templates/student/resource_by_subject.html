@@ -1,0 +1,31 @@
+{% extends "student/base-2.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="text-center">Resources for {{ subject.name }}</h1>
+                </div>
+                <div class="card-body">
+                    {% if resources %}
+                        <div class="list-group">
+                            {% for resource in resources %}
+                                <div class="list-group-item mb-3">
+                                    <h5 class="card-title">{{ resource.title }}</h5>
+                                    <p class="card-text">{{ resource.description }}</p>
+                                    <a href="{{ resource.url }}" class="btn btn-outline-primary" target="_blank">View Resource</a>
+                                    <p class="card-text"><small class="text-muted">Posted on {{ resource.date_posted.strftime('%Y-%m-%d') }}</small></p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="text-center">No resources available for this subject.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

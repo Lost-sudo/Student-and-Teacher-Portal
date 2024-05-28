@@ -1,0 +1,63 @@
+{% extends "teacher/base-2.html" %}
+{% block title %} Grades {% endblock %}
+{% block content %}
+
+<div class="container mt-5 p-2">
+    <h2 class="mb-4">Student Grade Management</h2>
+
+    <!-- Grade Submission Form -->
+    <form method="POST" action="{{ url_for('views.teacher_grades') }}">
+      <div class="form-group">
+          <label for="studentFirstName">Student First Name</label>
+          <input type="text" class="form-control" id="studentFirstName" name="studentFirstName" required>
+      </div>
+      <div class="form-group">
+          <label for="studentLastName">Student Last Name</label>
+          <input type="text" class="form-control" id="studentLastName" name="studentLastName" required>
+      </div>
+      <div class="form-group">
+          <label for="subject">Subject</label>
+          <select class="form-control" id="subject" name="subject" required>
+              {% for subject_id, subject_data in student_grades.items() %}
+                  <option value="{{ subject_id }}">{{ subject_data.subject_name }}</option>
+              {% endfor %}
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="grade">Grade</label>
+          <input type="number" step="0.01" class="form-control" id="grade" name="grade" required>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Update Grade</button>
+  </form>
+  
+
+    <!-- Current Grades -->
+    <h2 class="mt-5">Current Grades</h2>
+    {% for subject_id, subject_data in student_grades.items() %}
+        <h3>{{ subject_data.subject_name }}</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student First Name</th>
+                    <th>Student Last Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in subject_data.students %}
+                    <tr>
+                        <td>{{ student.student_firstname }}</td>
+                        <td>{{ student.student_lastname }}</td>
+                        <td>{{ student.grade }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+</div>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
